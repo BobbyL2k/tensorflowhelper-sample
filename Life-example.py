@@ -21,7 +21,7 @@ try:
         3,4,5,6
     ], dtype=np.float32)
     
-    life.connectNeuralNetwork( sampleInput=input_x, sampleOutput=expect_y, train=True )
+    life.connectNeuralNetwork( sampleInput=input_x, sampleOutput=expect_y, willTrain=False )
     
     life.initVar()
 
