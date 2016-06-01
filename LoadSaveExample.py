@@ -15,6 +15,7 @@ def main():
             layers=[
                 tfh.ValidationLayer(name="Input Validation", shape=[None], dtype=tf.float32),
                 tfh.OpLayer(lambda input: input + adder, [adder]),
+                tfh.OpLayer(tf.nn.relu),
                 tfh.ValidationLayer(shape=[None], dtype=tf.float32)])
         nn2 = tfh.NeuralNetwork(
             name="Inner2-NN",
@@ -43,9 +44,9 @@ def main():
         # life.init_network([nn1, nn2])
         # life.load_saved_model("test.ckpt", nn2)
 
-        # hypo = life.feed(input_x)
+        hypo = life.feed(input_x)
 
-        # print(hypo)
+        print(hypo)
 
         life.save_current_model("test.ckpt", nn1)
 
