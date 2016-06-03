@@ -13,11 +13,11 @@ def main():
                 name="Inner_NN",
                 layers=[
                     tfh.ValidationLayer(name="Input_Validation", shape=[None, 10, 10], dtype=tf.float32),
-                    tfh.ReshapeLayer(shape=[-1, 10, 10, 1]),
+                    tfh.ReshapeLayer(shape=[None, 10, 10, 1]),
                     tfh.ConvLayer(depth_out=2, kernel_width=2),
                     tfh.ConvLayer(depth_out=1, kernel_width=3, padding=False),
                     tfh.ValidationLayer(shape=[None, 8, 8, 1], dtype=tf.float32),
-                    tfh.ReshapeLayer(shape=[-1, 8, 8])
+                    tfh.ReshapeLayer(shape=[None, 8, 8])
                     ]),
             optimizer=tf.train.AdamOptimizer(0.3))
 
