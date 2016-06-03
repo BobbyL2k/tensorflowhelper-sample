@@ -15,7 +15,7 @@ def main():
         x_input = tf.placeholder(tf.float32, shape=[None])
 
         my_nn = tfh.NeuralNetwork(
-            name="Main-Layer",
+            name="Main_Layer",
             layers=[
                 tfh.ValidationLayer(shape=[None], dtype=tf.float32),
                 tfh.ReshapeLayer(shape=[-1, 1]),

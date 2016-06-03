@@ -11,11 +11,11 @@ def main():
 
         life = tfh.Life(
             tfh.NeuralNetwork(
-                name="Inner-NN",
+                name="Inner_NN",
                 layers=[
-                    tfh.ValidationLayer(name="Input-Validation", shape=[None], dtype=tf.float32),
-                        # Even though for ValidationLayer's name isn't required to not include space
-                        # but it is good to stay consistance since other might require
+                    # Even though for ValidationLayer's name isn't required to not include space
+                    # but it is good to stay consistance since other might require it
+                    tfh.ValidationLayer(name="Input_Validation", shape=[None], dtype=tf.float32),
                     tfh.OpLayer(lambda input: input + adder, [adder]),
                     tfh.ValidationLayer(shape=[None], dtype=tf.float32)]),
             optimizer=tf.train.GradientDescentOptimizer(0.3))

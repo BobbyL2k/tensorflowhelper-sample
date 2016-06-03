@@ -11,22 +11,22 @@ def main():
         adder2 = tf.Variable(7.)
 
         nn1 = tfh.NeuralNetwork(
-            name="Inner-NN",
+            name="Inner_NN",
             layers=[
-                tfh.ValidationLayer(name="Input Validation", shape=[None], dtype=tf.float32),
-                tfh.OpLayer(lambda input: input + adder, [adder]),
+                tfh.ValidationLayer(name="Input_Validation", shape=[None], dtype=tf.float32),
+                tfh.OpLayer(lambda input: input-+ adder, [adder]),
                 tfh.OpLayer(tf.nn.relu),
                 tfh.ValidationLayer(shape=[None], dtype=tf.float32)])
         nn2 = tfh.NeuralNetwork(
-            name="Inner2-NN",
+            name="Inner2_NN",
             layers=[
-                tfh.ValidationLayer(name="Input Validation", shape=[None], dtype=tf.float32),
+                tfh.ValidationLayer(name="Input_Validation", shape=[None], dtype=tf.float32),
                 tfh.OpLayer(lambda input: input + adder2, [adder2]),
                 tfh.ValidationLayer(shape=[None], dtype=tf.float32)])
 
         life = tfh.Life(
             tfh.NeuralNetwork(
-                name="Main-NN",
+                name="Main_NN",
                 layers=[nn1, nn2]),
             optimizer=tf.train.AdamOptimizer(0.3))
 

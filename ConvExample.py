@@ -7,13 +7,12 @@ import tensorflowhelper as tfh
 def main():
     """Entry point function"""
     try:
-        adder = tf.Variable(10.)
 
         life = tfh.Life(
             tfh.NeuralNetwork(
-                name="Inner-NN",
+                name="Inner_NN",
                 layers=[
-                    tfh.ValidationLayer(name="Input Validation", shape=[None, 10, 10], dtype=tf.float32),
+                    tfh.ValidationLayer(name="Input_Validation", shape=[None, 10, 10], dtype=tf.float32),
                     tfh.ReshapeLayer(shape=[-1, 10, 10, 1]),
                     tfh.ConvLayer(depth_out=2, kernel_width=2),
                     tfh.ConvLayer(depth_out=1, kernel_width=3, padding=False),
