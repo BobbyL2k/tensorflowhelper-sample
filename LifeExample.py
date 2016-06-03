@@ -13,10 +13,12 @@ def main():
             tfh.NeuralNetwork(
                 name="Inner-NN",
                 layers=[
-                    tfh.ValidationLayer(name="Input Validation", shape=[None], dtype=tf.float32),
-                    tfh.OpLayer(lambda input: input + adder),
+                    tfh.ValidationLayer(name="Input-Validation", shape=[None], dtype=tf.float32),
+                        # Even though for ValidationLayer's name isn't required to not include space
+                        # but it is good to stay consistance since other might require
+                    tfh.OpLayer(lambda input: input + adder, [adder]),
                     tfh.ValidationLayer(shape=[None], dtype=tf.float32)]),
-            optimizer=tf.train.AdamOptimizer(0.3))
+            optimizer=tf.train.GradientDescentOptimizer(0.3))
 
         input_x = np.array([
             1, 2, 3, 4
