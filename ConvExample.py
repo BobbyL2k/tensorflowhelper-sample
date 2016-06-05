@@ -31,10 +31,10 @@ def main():
 
     print(hypo)
 
-    # for counter in range(200):
-    #     cost = life.train(input_x, expect_y, process_list=[adder])
-    #     if counter%10 == 0:
-    #         print(cost)
+    for counter in range(200):
+        cost = life.train(input_x, expect_y, process_list=[])
+        if counter%10 == 0:
+            print(cost)
 
 if __name__ == "__main__":
     try:

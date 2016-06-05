@@ -17,7 +17,7 @@ def main():
                 tfh.ValidationLayer(name="Input_Validation", shape=[None], dtype=tf.float32),
                 tfh.OpLayer(lambda input: input + adder, [adder]),
                 tfh.ValidationLayer(shape=[None], dtype=tf.float32)]),
-        optimizer=tf.train.GradientDescentOptimizer(0.3))
+        optimizer=tf.train.AdamOptimizer(0.3))
 
     input_x = np.array([
         1, 2, 3, 4
