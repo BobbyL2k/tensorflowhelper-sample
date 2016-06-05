@@ -10,7 +10,8 @@ def main():
         tfh.NeuralNetwork(
             name="Inner_NN",
             layers=[
-                tfh.ValidationLayer(name="Input_Validation", shape=[None, 10, 10], dtype=tf.float32),
+                tfh.ValidationLayer(name="Input_Validation",
+                                    shape=[None, 10, 10], dtype=tf.float32),
                 tfh.ReshapeLayer(shape=[None, 10, 10, 1]),
                 tfh.ConvLayer(depth_out=2, kernel_width=2),
                 tfh.ConvLayer(depth_out=1, kernel_width=3, padding=False),

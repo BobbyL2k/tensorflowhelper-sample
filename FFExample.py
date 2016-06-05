@@ -1,11 +1,9 @@
-"""Example script for using FeedForwardLayer"""
-import tensorflow as tf
-import tensorflowhelper as tfh
-
-"""
+"""Example script for using FeedForwardLayer
 Although it is recommended to use tfh.NeuralNetwork with tfh.Life
 It is NOT required as you can see in this example.
 """
+import tensorflow as tf
+import tensorflowhelper as tfh
 
 def main():
     """Entry point function"""
