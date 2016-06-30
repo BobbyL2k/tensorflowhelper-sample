@@ -14,7 +14,9 @@ def main():
                                     shape=[None, 10, 10], dtype=tf.float32),
                 tfh.ReshapeLayer(shape=[None, 10, 10, 1]),
                 tfh.ConvLayer(depth_out=2, kernel_width=2),
+                tfh.ConvBiasLayer(),
                 tfh.ConvLayer(depth_out=1, kernel_width=3, padding=False),
+                tfh.ConvBiasLayer(),
                 tfh.ValidationLayer(shape=[None, 8, 8, 1], dtype=tf.float32),
                 tfh.ReshapeLayer(shape=[None, 8, 8])
                 ]),
